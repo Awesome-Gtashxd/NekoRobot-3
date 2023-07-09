@@ -563,6 +563,6 @@ NEKO_PTB.add_handler(
     CommandHandler("checkgb", check_gbans, filters=Filters.user(OWNER_ID)))
 NEKO_PTB.add_handler(
     CommandHandler("cleangb", clear_gbans, filters=Filters.user(OWNER_ID)))
-NEKO_PTB.add_handler(MessageHandler((Filters.all & Filters.chat_type.groups), enforce_gban)))
+NEKO_PTB.add_handler(MessageHandler((Filters.all & Filters.chat_type.groups), enforce_gban))
 
 __mod_name__ = "Anti-Spam"
