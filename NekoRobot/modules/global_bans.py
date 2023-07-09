@@ -558,7 +558,7 @@ NEKO_PTB.add_handler(CommandHandler("gban", gban))
 NEKO_PTB.add_handler(CommandHandler("ungban", ungban))
 NEKO_PTB.add_handler(CommandHandler("gbanlist", gbanlist))
 NEKO_PTB.add_handler(
-    CommandHandler("antispam", gbanstat, Filters=Filters.chatType.group))
+    CommandHandler("antispam", gbanstat, Filters=Filters.ChatType.group))
 NEKO_PTB.add_handler(
     CommandHandler("checkgb", check_gbans, Filters=Filters.User(OWNER_ID)))
 NEKO_PTB.add_handler(
