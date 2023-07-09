@@ -4,23 +4,25 @@ from datetime import datetime
 from io import BytesIO
 
 from telegram import Update, Bot
-from telegram.constants import ParseMode
+from telegram  import ParseMode
 from telegram.error import BadRequest, TelegramError
 from telegram.ext import CallbackContext, CommandHandler, filters, MessageHandler
 from telegram.helpers import mention_html
 
 import NekoRobot.modules.sql.global_bans_sql as sql
 from NekoRobot import (
-    DEMON,
-    DEV,
-    GBAN_LOGS,
+    DEMONS,
+    DEV_USERS,
+    DRAGONS,
+    EVENT_LOGS,
+    NEKO_PTB,
     OWNER_ID,
+    SPAMWATCH_SUPPORT_CHAT,
     STRICT_GBAN,
     SUPPORT_CHAT,
-    TIGER,
-    WHITELIST_USERS,
-    NEKO_PTB,
-    SUDO_USERS,
+    TIGERS,
+    WOLVES,
+    sw,
 )
 from NekoRobot.modules.helper_funcs.chat_status import (
     is_user_admin,
@@ -552,15 +554,15 @@ you and your groups by removing spam flooders as quickly as possible.
 *Note:* Users can appeal gbans or report spammers at @{SUPPORT_CHAT}
 """
 
-CUTIEPII_PTB.add_handler(CommandHandler("gban", gban))
-CUTIEPII_PTB.add_handler(CommandHandler("ungban", ungban))
-CUTIEPII_PTB.add_handler(CommandHandler("gbanlist", gbanlist))
-CUTIEPII_PTB.add_handler(
+NEKO_PTB.add_handler(CommandHandler("gban", gban))
+NEKO_PTB.add_handler(CommandHandler("ungban", ungban))
+NEKO_PTB.add_handler(CommandHandler("gbanlist", gbanlist))
+NEKO_PTB.add_handler(
     CommandHandler("antispam", gbanstat, filters=filters.ChatType.GROUPS))
-CUTIEPII_PTB.add_handler(
+NEKO_PTB.add_handler(
     CommandHandler("checkgb", check_gbans, filters=filters.User(OWNER_ID)))
-CUTIEPII_PTB.add_handler(
+NEKO_PTB.add_handler(
     CommandHandler("cleangb", clear_gbans, filters=filters.User(OWNER_ID)))
-CUTIEPII_PTB.add_handler(MessageHandler((filters.ALL & filters.ChatType.GROUPS), enforce_gban))
+NEKO_PTB.add_handler(MessageHandler((filters.ALL & filters.ChatType.GROUPS), enforce_gban))
 
 __mod_name__ = "Anti-Spam"
