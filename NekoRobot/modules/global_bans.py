@@ -89,13 +89,13 @@ async def gban(update: Update, context: CallbackContext) -> None:
         await message.reply_text("That user is a Destroyers", )
         return
 
-    if (user_id) in SUDO_USERS:
+    if (user_id) in DRAGONS:
         await message.reply_text(
             "I spy, with my little eye... a Shadow Slayer! Why are you guys turning on each other?",
         )
         return
 
-    if (user_id) in SUPPORT_USERS:
+    if (user_id) in DEMONS:
         await message.reply_text(
             "OOOH someone's trying to gban a Guardian! *Grabs Popcorn*", )
         return
@@ -194,7 +194,7 @@ async def gban(update: Update, context: CallbackContext) -> None:
             )
 
     else:
-        send_to_list(bot, SUDO_USERS + SUPPORT_USERS, log_message, html=True)
+        send_to_list(bot, DRAGONS + DEMONS, log_message, html=True)
 
     gban_db.gban_user(user_id, user_chat.username or user_chat.first_name,
                       reason)
@@ -226,7 +226,7 @@ async def gban(update: Update, context: CallbackContext) -> None:
                 else:
                     send_to_list(
                         bot,
-                        SUDO_USERS + SUPPORT_USERS,
+                        DRAGONS + DEMONS,
                         f"Could not gban due to: {excp.message}",
                     )
                 sql.ungban_user(user_id)
@@ -243,7 +243,7 @@ async def gban(update: Update, context: CallbackContext) -> None:
     else:
         send_to_list(
             bot,
-            SUDO_USERS + SUPPORT_USERS,
+            DRAGONS + DEMONS,
             f"Gban complete! (User banned in <code>{gbanned_chats}</code> chats)",
             html=True,
         )
