@@ -7,7 +7,7 @@ from telegram import Update, Bot
 from telegram  import ParseMode
 from telegram.error import BadRequest, TelegramError
 from telegram.ext import CallbackContext, CommandHandler, filters, MessageHandler
-from telegram.helpers import mention_html
+from telegram.utils.helpers import mention_html
 
 import NekoRobot.modules.sql.global_bans_sql as sql
 from NekoRobot import (
