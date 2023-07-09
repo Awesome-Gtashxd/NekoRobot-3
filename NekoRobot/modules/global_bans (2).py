@@ -11,13 +11,13 @@ from telegram.helpers import mention_html
 
 import NekoRobot.modules.sql.global_bans_sql as sql
 from NekoRobot import (
-    SUPPORT_USERS,
-    DEV_USERS,
+    DEMON,
+    DEV,
     GBAN_LOGS,
     OWNER_ID,
     STRICT_GBAN,
     SUPPORT_CHAT,
-    TIGER_USERS,
+    TIGER,
     WHITELIST_USERS,
     NEKO_PTB,
     SUDO_USERS,
