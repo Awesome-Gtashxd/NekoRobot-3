@@ -524,7 +524,7 @@ def __user_info__(user_id):
         return ""
     if user_id == 1241223850:
         return ""
-    if (user_id) in SUDO_USERS + TIGER_USERS + WHITELIST_USERS:
+    if (user_id) in DRAGONS + TIGERS + WHITELIST_USERS:
         return ""
     if is_gbanned:
         text = text.format("Yes")
