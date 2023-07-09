@@ -558,11 +558,11 @@ NEKO_PTB.add_handler(CommandHandler("gban", gban))
 NEKO_PTB.add_handler(CommandHandler("ungban", ungban))
 NEKO_PTB.add_handler(CommandHandler("gbanlist", gbanlist))
 NEKO_PTB.add_handler(
-    CommandHandler("antispam", gbanstat, filters=filters.ChatType.GROUPS))
+    CommandHandler("antispam", gbanstat, Filters=Filters.chatType.group))
 NEKO_PTB.add_handler(
-    CommandHandler("checkgb", check_gbans, filters=filters.User(OWNER_ID)))
+    CommandHandler("checkgb", check_gbans, Filters=Filters.User(OWNER_ID)))
 NEKO_PTB.add_handler(
-    CommandHandler("cleangb", clear_gbans, filters=filters.User(OWNER_ID)))
+    CommandHandler("cleangb", clear_gbans, Filters=Filters.User(OWNER_ID)))
 NEKO_PTB.add_handler(MessageHandler((Filters.all & Filters.chat_type.groups, enforce_gban)))
 
 __mod_name__ = "Anti-Spam"
